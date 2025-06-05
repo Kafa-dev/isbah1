@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opini</title>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: slategray;
+      color: #ffffff;
+      animation: fadeInUp 1s ease;
+    }
+
+    header {
+      background-color: silver;
+      color: #000;
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .opini-section {
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .opini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .opini-card {
+      background-color: #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    .opini-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .opini-card img, .opini-card video {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .opini-card-content {
+      padding-top: 10px;
+    }
+
+    .opini-card h4 {
+      margin: 0 0 10px;
+      color: #000;
+    }
+
+    .opini-card p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    .hubungi-wrapper {
+      margin-top: 40px;
+    }
+
+    .hubungi {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .form-contact,
+    .map-box {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      color: #000;
+      animation: fadeInUp 1s ease;
+    }
+
+    .form-contact h3,
+    .map-box h4 {
+      margin-top: 0;
+    }
+
+    .form-contact input,
+    .form-contact textarea {
+      width: 95%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .form-contact button {
+      background-color: #4e54c8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-contact button:hover {
+      background-color: #3e42a8;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portofolio</h1>
+  </header>
+
+  <main>
+    <section class="opini-section">
+      <div class="opini-grid">
+        <div class="opini-card">
+          <img src="bukticoding.jpg" alt="Gambar proyek web">
+          <div class="opini-card-content">
+            <h4>Proyek WEB</h4>
+            <p>Saya sedang mengerjakan tugas dari dosen yaitu membuat web menggunakan CSS dan HTML.</p>
+          </div>
+        </div>
+        <div class="opini-card">
+          <video controls>
+            <source src="watch.mp4" type="video/mp4">
+          </video>
+          <div class="opini-card-content">
+            <h4>Tugas Bahasa Inggris</h4>
+            <p>Saya diberi tugas oleh dosen Bahasa Inggris untuk membuat podcast dalam bahasa Inggris secara perlahan.</p>
+          </div>
+        </div>
+        <div class="opini-card">
+          <img src="ngodingbareng.jpg" alt="Gambar kerja kelompok">
+          <div class="opini-card-content">
+            <h4>Ngoding Bareng</h4>
+            <p>Kami melakukan kerja kelompok di warkop agar lebih nyaman dan santai dalam berdiskusi.</p>
+          </div>
+        </div>
+        <div class="opini-card">
+          <img src="presentasi.jpg" alt="Contoh gambar 4">
+          <div class="opini-card-content">
+            <h4>Presentasi</h4>
+            <p>Kami sedang melakukan belajar mandiri dikelas dengan 2 anak presentasi didepan.</p>
+          </div>
+        </div>
+        <div class="opini-card">
+          <img src="it camp 1.jpg" alt="Contoh gambar 5">
+          <div class="opini-card-content">
+            <h4>IT camp</h4>
+            <p>Kegiatan camp yang diselenggarakan oleh prodi Teknik Informatika.</p>
+          </div>
+        </div>
+        <div class="opini-card">
+          <img src="batik it.jpg" alt="Contoh gambar 6">
+          <div class="opini-card-content">
+            <h4>Cinta Batik</h4>
+            <p>Kami sekelas serentak memakai batik sebagai tanda kecintaan kepada budaya tanah air.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hubungi-wrapper">
+      <div class="hubungi">
+        <div class="form-contact">
+          <h3>Hubungi Saya</h3>
+          <p>Silakan isi formulir berikut untuk menghubungi saya. Saya akan segera merespons pesan Anda.</p>
+          <input type="email" placeholder="Email Anda">
+          <input type="text" placeholder="Nama Lengkap">
+          <input type="text" placeholder="Subjek Pesan">
+          <textarea rows="4" placeholder="Isi Pesan Anda"></textarea>
+          <button type="submit">Kirim</button>
+        </div>
+        <div class="map-box">
+          <h4>Alamat / Google Maps</h4>
+          <p>Berikut adalah lokasi saya di Google Maps. Anda bisa mengunjungi langsung atau menghubungi saya sebelumnya.</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.4971794626085!2d111.86464809999997!3d-7.183967799999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e778119a7053c55%3A0x887df03e9e4c21a!2sPP%20NURUL%20ISLAM%20AL-MUNIRI!5e0!3m2!1sid!2sid!4v1745391487213!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 - Kafa Developer
+  </footer>
+</body>
+</html>

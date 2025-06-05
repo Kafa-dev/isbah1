@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Kafa</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #d7dde8, #f5f7fa);
+      color: #333;
+    }
+
+    header {
+      width: 92%;
+      background: linear-gradient(to right, #c0c0c0, #e0e0e0);
+      padding: 20px 50px;
+      color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a, label.dropdown-btn {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover,
+    label.dropdown-btn:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    #toggleDropdown {
+      display: none;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(200, 200, 200, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #222;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    #toggleDropdown:checked + label + .dropdown-content {
+      display: block;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      margin: 0 0 8px 0;
+      color: #2c2c2c;
+    }
+
+    .intro p {
+      font-size: 18px;
+      color: #555;
+      margin: 0;
+    }
+
+    .intro-underline {
+      grid-column: span 2;
+      width: 80%;
+      height: 4px;
+      background: linear-gradient(to right, silver, #aaa);
+      border-radius: 6px;
+      margin: 20px auto 40px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .foto img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid silver;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-title.center {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      color: #3b3b3b;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .underline {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, silver, #aaa);
+      margin: 0 auto 20px auto;
+      border-radius: 6px;
+    }
+
+    .tentang-foto-container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .isi-section {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .tentang {
+      flex: 1;
+      max-width: 550px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      padding: 20px 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(200, 200, 200, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .foto-lain {
+      width: 220px;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid rgba(180,180,180,0.3);
+      background-color: #f0f0f0;
+    }
+
+    .foto-lain img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #ccc;
+      color: #222;
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: linear-gradient(to right, #c0c0c0, #e0e0e0);
+      color: #222;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+
+      .isi-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .foto-lain {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#Beranda">Beranda</a>
+    <a href="#Tentang Saya">Tentang Saya</a>
+    <a href="#Portofolio">Portofolio</a>
+    <a href="opini.html">Opini</a>
+    <div class="dropdown">
+      <input type="checkbox" id="toggleDropdown" />
+      <label for="toggleDropdown" class="dropdown-btn">Lainnya</label>
+      <div class="dropdown-content">
+        <a href="https://www.instagram.com/kang_undzell/profilecard/?igsh=cTEwdTI3c3c3NW5s" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/santri.milenial.5855594" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/@kafalish_x08?_t=ZS-8viNnx9UeQS&_r=1" target="_blank">Tiktok</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="intro" data-aos="fade-up">
+    <div class="foto">
+      <img src="aku.jpg" alt="Foto Profil">
+    </div>
+    <div>
+      <h2>Halo, saya Kafa Faliqul Ishbah</h2>
+      <p>Saya seorang Developer</p>
+    </div>
+    <div class="intro-underline"></div>
+  </div>
+
+  <div class="tentang-foto-container" data-aos="fade-up">
+    <h3 class="section-title center">Tentang Saya</h3>
+    <div class="underline"></div>
+
+    <div id="Tentang Saya" class="isi-section">
+      <div class="tentang" data-aos="fade-right">
+        <p>Saya adalah seseorang yang terlahir dari keluarga sederhana, dan saya mempunyai tekad yang kuat serta semangat yang tinggi untuk meraih dan mewujudkan cita-cita yang tinggi agar bisa mengangkat derajat kedua orang tua dan martabat keluarga.</p>
+      </div>
+      <div class="foto-lain" data-aos="fade-left">
+        <img src="aku-and-kudus.jpg" alt="Foto Lain">
+      </div>
+    </div>
+  </div>
+
+  <hr class="pembatas">
+
+  <h3 id="Portofolio" class="section-title" style="text-align: center;">Portofolio</h3>
+  <table data-aos="fade-up">
+    <tr>
+      <th>No</th>
+      <th>Nama Kegiatan</th>
+      <th>Waktu Kegiatan</th>
+      <th>Bukti Kegiatan</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Ngoding</td>
+      <td>21 April 2025</td>
+      <td><a href="bukticoding.jpg">Lihat Bukti</a></td>
+    </tr>
+  </table>
+</div>
+
+<footer>
+  Copyright by Kafa Faliqul Ishbah
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000
+  });
+</script>
+</body>
+</html>
